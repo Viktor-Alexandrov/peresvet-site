@@ -62,8 +62,8 @@ main {
 /* Применяем Ponomar, он строже */
 .logo__title {
     font-family: 'Ponomar', serif; 
-    font-size: 34px;
-    line-height: 1.1;
+    font-size: 68px;
+    line-height: 1;
 }
 
 .logo__subtitle {
