@@ -54,25 +54,38 @@ main {
 
 .logo {
     display: flex;
-    flex-direction: column;
+    align-items: center; /* Выравниваем картинку и текст по центру по вертикали */
+    gap: 15px; /* Расстояние между картинкой и текстом */
     text-decoration: none;
-    color: #fff;
+}
+
+/* Картинка логотипа */
+.logo__img {
+    height: 60px; /* Подгоняем под высоту текста, можешь чуть изменить */
+    width: auto;
+    border-radius: 50%; /* Если картинка квадратная, это сделает её круглой */
+}
+
+.logo__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* Применяем Ponomar, он строже */
 .logo__title {
     font-family: 'Ponomar', serif; 
-    font-size: 68px; 
+    font-size: 48px; /* Уменьшили с 68px, чтобы влезло в одну строку с картинкой */
     line-height: 1; 
     letter-spacing: 1px;
-    color: #e8d5b7; /* Благородный цвет слоновой кости / состаренного золота */
-    text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.8); /* Глубокая тень для объема */
+    color: #e8d5b7; 
+    text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.8); 
 }
 
 .logo__subtitle {
-    font-family: Arial, sans-serif; /* Подзаголовок лучше читается без засечек */
-    font-size: 13px;
-    color: #dcdcdc;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #dcdcdc; 
     text-transform: uppercase;
     letter-spacing: 1.5px;
     margin-top: 4px;
@@ -95,15 +108,16 @@ main {
 
 /* --- Главный экран --- */
 .hero {
-    /* Убрали много воздуха: уменьшили вертикальные отступы */
-    padding: 40px 0; 
+    padding: 60px 0;
+    display: flex;
+    justify-content: center; /* Центрируем содержимое по горизонтали */
 }
 
 .hero__inner {
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    gap: 30px;
+    width: 100%;
 }
 
 .hero__text {
@@ -114,26 +128,31 @@ main {
 /* Девиз на фоне ринга */
 .hero__motto {
     font-family: 'Ponomar', 'PT Serif', serif;
-    font-size: 28px; /* Было 36px, уменьшили до 28px */
+    font-size: 48px; /* Увеличили размер шрифта */
     line-height: 1.4;
     color: #ffffff; 
     font-weight: normal;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    text-align: center; /* Текст по центру */
     
+    /* Увеличили блок с фоном */
     background-image: url('../images/ring-bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    padding: 80px 120px; /* Значительно увеличили отступы, чтобы блок стал большим */
+    max-width: 1000px; /* Увеличили ширину */
+    width: 100%;
     
-    padding: 30px 40px; /* Уменьшили отступы с 40px 50px */
-    margin: 0;
+    /* Рамка и тень */
+    border-top: 4px solid #8b0000; /* Сделали рамку сверху и снизу для симметрии */
+    border-bottom: 4px solid #8b0000;
+    border-left: none; /* Убрали левую полосу, так как блок теперь по центру */
+    border-right: none;
     
-    text-align: center; 
-    border-left: 6px solid #8b0000; 
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9); 
-    
-    max-width: 420px; /* Уменьшили максимальную ширину блока с 500px */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Добавили глубокую тень самому блоку */
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9); 
 }
 
 /* Картинка: уменьшили и добавили строгую рамку */
