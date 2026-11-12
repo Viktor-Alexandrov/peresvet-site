@@ -48,8 +48,10 @@ main {
 
 .header__inner {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+		max-width: 100%; /* Растягиваем на всю ширину */
+    padding: 0 40px; /* Отступы от краев экрана (можно 20px или 60px) */
 }
 
 .logo {
@@ -61,7 +63,7 @@ main {
 
 /* Картинка логотипа */
 .logo__img {
-    height: 60px; /* Подгоняем под высоту текста, можешь чуть изменить */
+    height: 80px; /* Подгоняем под высоту текста, можешь чуть изменить */
     width: auto;
     border-radius: 50%; /* Если картинка квадратная, это сделает её круглой */
 }
@@ -115,7 +117,7 @@ main {
 
 .hero__inner {
     display: flex;
-    justify-content: center;
+    justify-content: space-between; /* Разносит элементы по краям */
     align-items: center;
     width: 100%;
 }
