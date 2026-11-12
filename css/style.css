@@ -71,8 +71,8 @@ main {
 
 .logo__subtitle {
     font-family: Arial, sans-serif; /* Подзаголовок лучше читается без засечек */
-    font-size: 11px;
-    color: #999;
+    font-size: 13px;
+    color: #dcdcdc;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     margin-top: 4px;
@@ -169,6 +169,7 @@ main {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
+		font-family: 'PT Serif', 'Georgia', serif; /* Строгий шрифт с засечками */
     font-size: 24px; /* Увеличили до 22px */
     line-height: 1.8; 
     color: #333; 
