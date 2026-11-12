@@ -62,8 +62,11 @@ main {
 /* Применяем Ponomar, он строже */
 .logo__title {
     font-family: 'Ponomar', serif; 
-    font-size: 68px;
-    line-height: 1;
+    font-size: 68px; 
+    line-height: 1; 
+    letter-spacing: 1px;
+    color: #e8d5b7; /* Благородный цвет слоновой кости / состаренного золота */
+    text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.8); /* Глубокая тень для объема */
 }
 
 .logo__subtitle {
@@ -111,35 +114,26 @@ main {
 /* Девиз на фоне ринга */
 .hero__motto {
     font-family: 'Ponomar', 'PT Serif', serif;
-    font-size: 36px; /* Оставили строгий размер */
+    font-size: 28px; /* Было 36px, уменьшили до 28px */
     line-height: 1.4;
-    color: #ffffff; /* Белый текст на фоне */
+    color: #ffffff; 
     font-weight: normal;
     text-transform: uppercase;
     letter-spacing: 1px;
     
-    /* Параметры фона */
     background-image: url('../images/ring-bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     
-    /* Внутренние отступы, чтобы текст не прилипал к краям картинки */
-    padding: 40px 50px; 
+    padding: 30px 40px; /* Уменьшили отступы с 40px 50px */
     margin: 0;
-
-		/* Центрирование текста */
-    text-align: center; /* <--- ДОБАВЛЕНА ЭТА СТРОКА */
     
-    /* Оставляем бордовую полосу слева для строгости */
+    text-align: center; 
     border-left: 6px solid #8b0000; 
-    
-    /* Тень для текста, чтобы читался на любом фоне */
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9); 
     
-    /* Убедимся, что блок не растянется на всю ширину экрана */
-    max-width: 500px; 
-    border-radius: 2px; /* Легкое скругление, если нужно */
+    max-width: 420px; /* Уменьшили максимальную ширину блока с 500px */
 }
 
 /* Картинка: уменьшили и добавили строгую рамку */
