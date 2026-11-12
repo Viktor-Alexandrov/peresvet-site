@@ -250,6 +250,7 @@ main {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+		gap: 6px; /* Расстояние между иконкой и словом MAX */
     margin-left: 10px;
     color: #bbb; /* Цвет как у текста футера */
     transition: color 0.3s ease, transform 0.3s ease;
