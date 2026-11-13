@@ -564,25 +564,26 @@ main {
    12. АДАПТИВНОСТЬ (МОБИЛЬНАЯ ВЕРСИЯ)
    ========================================= */
 
-/* Для планшетов и телефонов (ширина меньше 992px) */
-@media (max-width: 992px) {
+/* Для планшетов и небольших ноутбуков (ширина меньше 992px) */
+@media (max-width: 1150px) {
     /* Шапка */
     .header__inner {
-        flex-direction: column; /* Ставим логотип и меню друг под другом */
+        flex-direction: column; 
         gap: 15px;
         padding-bottom: 15px;
     }
 
     .nav {
         display: flex;
-        flex-wrap: wrap; /* Позволяем ссылкам переноситься на новую строку */
-        justify-content: center;
-        gap: 15px;
+        flex-wrap: wrap; 
+        justify-content: center; 
+        gap: 15px; 
+        width: 100%;
     }
 
     .nav a {
-        margin-left: 0; /* Убираем отступ слева, так как используем gap */
-        font-size: 13px; /* Чуть уменьшаем шрифт меню */
+        margin-left: 0; 
+        font-size: 14px; 
     }
 
     /* Девиз на ринге */
@@ -607,7 +608,7 @@ main {
 
     /* Логотип */
     .logo {
-        flex-direction: column; /* Картинка над текстом */
+        flex-direction: column; 
         text-align: center;
         gap: 10px;
     }
@@ -618,7 +619,7 @@ main {
     }
 
     .logo__title {
-        font-size: 36px; /* Уменьшаем заголовок */
+        font-size: 36px; 
     }
 
     /* Меню */
@@ -650,6 +651,6 @@ main {
 
     /* Текст истории */
     .history-content {
-        font-size: 18px; /* Чуть уменьшаем, чтобы не было слишком крупно */
+        font-size: 18px; 
     }
 }
