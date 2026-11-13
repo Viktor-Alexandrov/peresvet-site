@@ -290,10 +290,12 @@ main {
 .schedule-card__title {
     font-family: 'Ponomar', serif;
     font-size: 24px;
-    color: #2b2b2b;
+    color: #b8860b; /* Темно-золотой вместо мрачного #2b2b2b */
     margin-bottom: 5px;
     text-transform: uppercase;
     letter-spacing: 1px;
+		/* Легкая тень для объема */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); 
 }
 
 .schedule-card__desc {
