@@ -345,6 +345,85 @@ main {
 }
 
 /* =========================================
+   9. ТРЕНЕРСКИЙ СОСТАВ
+   ========================================= */
+.coaches-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.coach-card {
+    background-color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    border-top: 4px solid #8b0000; /* Бордовая полоса сверху */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.coach-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Заглушка для фото */
+.coach-card__img-placeholder {
+    width: 150px;
+    height: 150px;
+    background-color: #e8e6e1; /* Цвет фона сайта */
+    border-radius: 50%; /* Круглая форма */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 3px solid #b8860b; /* Золотистая окантовка */
+    color: #888;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+/* Если добавишь реальное фото, используй этот класс */
+.coach-card__img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #b8860b;
+    margin-bottom: 20px;
+}
+
+.coach-card__name {
+    font-family: 'Ponomar', serif;
+    font-size: 22px;
+    color: #b8860b; /* Темно-золотой */
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.coach-card__role {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #8b0000; /* Бордовый */
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.coach-card__desc {
+    font-family: 'PT Serif', 'Georgia', serif;
+    font-size: 16px;
+    color: #444;
+    line-height: 1.5;
+		text-align: justify;
+}
+
+/* =========================================
    8. ПОДВАЛ (FOOTER)
    ========================================= */
 .footer {
