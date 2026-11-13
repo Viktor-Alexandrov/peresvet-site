@@ -1,4 +1,6 @@
-/* --- Подключение шрифтов --- */
+/* =========================================
+   1. ПОДКЛЮЧЕНИЕ ШРИФТОВ
+   ========================================= */
 @font-face {
     font-family: 'Fedorovsk';
     src: url('../fonts/FedorovskUnicode.otf') format('opentype');
@@ -9,7 +11,9 @@
     src: url('../fonts/PonomarUnicode.otf') format('opentype');
 }
 
-/* --- Базовые настройки --- */
+/* =========================================
+   2. БАЗОВЫЕ НАСТРОЙКИ И СБРОС
+   ========================================= */
 * {
     margin: 0;
     padding: 0;
@@ -17,59 +21,70 @@
 }
 
 body {
-    /* Строгий шрифт с засечками для всего сайта, чтобы не было "воды" */
-    font-family: 'PT Serif', 'Ponomar', Georgia, serif; 
+    font-family: 'PT Serif', 'Georgia', serif;
     line-height: 1.6;
     color: #222;
-    /* Более глубокий, "каменный" фон */
-    background-color: #e8e6e1; 
+    background-color: #e8e6e1; /* Каменный фон */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
 main {
-    flex: 1; 
+    flex: 1; /* Прижимает футер к низу */
 }
 
 .container {
-    max-width: 1100px; /* Немного сузили для плотности */
+    max-width: 100%; /* Растягиваем на всю ширину для шапки */
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 40px; /* Отступы от краев экрана */
 }
 
-/* --- Шапка --- */
+/* Ограничиваем ширину контента для внутренних блоков, чтобы текст не растягивался на весь экран */
+.hero__inner,
+.page-content .container,
+.history-preview .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   3. ШАПКА САЙТА (HEADER)
+   ========================================= */
 .header {
-    background-color: #1a1a1a; /* Более темный, почти черный */
+    background-color: #1a1a1a; /* Почти черный */
     color: #fff;
-    padding: 15px 0;
-    border-bottom: 3px solid #8b0000; /* Бордовая полоса-акцент */
+    padding: 10px 0;
+    border-bottom: 3px solid #8b0000; /* Бордовый акцент */
+}
+
+.header .container {
+    max-width: 100%;
+    padding: 0 40px;
 }
 
 .header__inner {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between; /* Логотип влево, меню вправо */
     align-items: center;
-		max-width: 100%; /* Растягиваем на всю ширину */
-    padding: 0 40px; /* Отступы от краев экрана (можно 20px или 60px) */
+    width: 100%;
 }
 
+/* Логотип */
 .logo {
     display: flex;
-    align-items: center; /* Выравниваем картинку и текст по центру по вертикали */
-    gap: 15px; /* Расстояние между картинкой и текстом */
+    align-items: center;
+    gap: 15px;
     text-decoration: none;
 }
 
-/* Картинка логотипа */
 .logo__img {
-    width: 80px;           /* Задаем ширину (можешь подобрать под свой размер) */
-    height: 80px;          /* Высота должна быть точно такой же, как ширина */
-    object-fit: cover;     /* Обрезает картинку, чтобы она заполнила круг без искажений */
-    border-radius: 50%;    /* Делает форму идеально круглой */
-    border: 2px solid #e8d5b7; /* Опционально: тонкая золотистая окантовка в цвет заголовка */
-		/* Добавляем позиционирование */
-    object-position: center 20%; /* Сдвигаем фокус картинки вниз (по умолчанию center center) */
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #e8d5b7; /* Тонкая золотистая окантовка */
+    object-position: center 20%; /* Опускаем картинку, чтобы было видно голову */
 }
 
 .logo__text {
@@ -78,26 +93,25 @@ main {
     justify-content: center;
 }
 
-/* Применяем Ponomar, он строже */
 .logo__title {
-    font-family: 'Ponomar', serif; 
-    font-size: 48px; /* Уменьшили с 68px, чтобы влезло в одну строку с картинкой */
-    line-height: 1; 
+    font-family: 'Ponomar', serif;
+    font-size: 48px;
+    line-height: 1;
     letter-spacing: 1px;
-    color: #e8d5b7; 
-    text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.8); 
+    color: #e8d5b7; /* Слоновая кость */
+    text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.8);
 }
 
 .logo__subtitle {
     font-family: Arial, sans-serif;
     font-size: 12px;
-		font-style: italic;
-    color: #dcdcdc; 
+    color: #dcdcdc;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     margin-top: 4px;
 }
 
+/* Навигация */
 .nav a {
     font-family: Arial, sans-serif;
     color: #aaa;
@@ -113,70 +127,59 @@ main {
     color: #fff;
 }
 
-/* --- Главный экран --- */
+/* =========================================
+   4. ГЛАВНЫЙ ЭКРАН (HERO)
+   ========================================= */
 .hero {
     padding: 60px 0;
     display: flex;
-    justify-content: center; /* Центрируем содержимое по горизонтали */
+    justify-content: center;
 }
 
 .hero__inner {
     display: flex;
-    justify-content: space-between; /* Разносит элементы по краям */
+    justify-content: center;
     align-items: center;
     width: 100%;
 }
 
-.hero__text {
-    flex: 1; /* Текст занимает оставшееся место */
-}
-
-/* Девиз: строгий, крупный, без "пляшущих" букв */
 /* Девиз на фоне ринга */
 .hero__motto {
     font-family: 'Ponomar', 'PT Serif', serif;
-    font-size: 48px; /* Увеличили размер шрифта */
+    font-size: 48px;
     line-height: 1.4;
-    color: #ffffff; 
+    color: #ffffff;
     font-weight: normal;
     text-transform: uppercase;
     letter-spacing: 2px;
-    text-align: center; /* Текст по центру */
+    text-align: center;
     
-    /* Увеличили блок с фоном */
     background-image: url('../images/ring-bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 80px 120px; /* Значительно увеличили отступы, чтобы блок стал большим */
-    max-width: 1000px; /* Увеличили ширину */
+    padding: 80px 120px;
+    max-width: 1000px;
     width: 100%;
     
-    /* Рамка и тень */
-    border-top: 4px solid #8b0000; /* Сделали рамку сверху и снизу для симметрии */
+    border-top: 4px solid #8b0000;
     border-bottom: 4px solid #8b0000;
-    border-left: none; /* Убрали левую полосу, так как блок теперь по центру */
-    border-right: none;
-    
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Добавили глубокую тень самому блоку */
-    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9); 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9);
 }
 
-/* Картинка: уменьшили и добавили строгую рамку */
-.hero__image img {
-    max-width: 240px;
-    height: auto;
-    display: block;
-    border: 3px solid #5c4a3d; /* Бронзово-коричневый */
-    padding: 3px; 
-    background-color: #fdfbf7; /* Цвет слоновой кости */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+/* =========================================
+   5. БЛОК ИСТОРИИ НА ГЛАВНОЙ
+   ========================================= */
+.history-preview {
+    padding: 60px 0;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
 }
 
-/* --- Общие стили для секций --- */
 .section-title {
     font-family: 'Ponomar', serif;
-    font-size: 28px; /* Уменьшили с 36px */
+    font-size: 28px;
     color: #2b2b2b;
     text-align: center;
     margin-bottom: 25px;
@@ -184,25 +187,18 @@ main {
     letter-spacing: 1.5px;
 }
 
-/* --- Блок История --- */
-.history-preview {
-    padding: 60px 0;
-    background-color: #fff; /* Чуть светлее основного фона для контраста */
-    border-top: 1px solid #ddd;
-}
-
 .history-content {
-    max-width: 800px;
+    width: 100%;
     margin: 0 auto;
-    text-align: justify;
-		font-family: 'PT Serif', 'Georgia', serif; /* Строгий шрифт с засечками */
-    font-size: 24px; /* Увеличили до 22px */
-    line-height: 1.1; 
-    color: #333; 
+    font-family: 'PT Serif', 'Georgia', serif;
+    font-size: 20px;
+    line-height: 1.4;
+    color: #333;
+    text-align: justify; /* Текст по ширине */
 }
 
 .history-content p {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 /* Кнопка */
@@ -226,7 +222,104 @@ main {
     color: #8b0000;
 }
 
-/* --- Подвал --- */
+/* =========================================
+   6. ВНУТРЕННИЕ СТРАНИЦЫ (ИСТОРИЯ, РАСПИСАНИЕ)
+   ========================================= */
+.page-content {
+    padding: 50px 0;
+}
+
+.page-title {
+    font-family: 'Ponomar', serif;
+    font-size: 36px;
+    color: #2b2b2b;
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* =========================================
+   7. РАСПИСАНИЕ (СЕТКА КАРТОЧЕК)
+   ========================================= */
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.schedule-card {
+    background-color: #fff;
+    border-left: 6px solid #8b0000;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.schedule-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-card__title {
+    font-family: 'Ponomar', serif;
+    font-size: 24px;
+    color: #2b2b2b;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.schedule-card__desc {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #8b0000;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.schedule-card__days {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.schedule-card__days li {
+    font-family: 'PT Serif', 'Georgia', serif;
+    font-size: 17px;
+    color: #444;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.schedule-card__days li:last-child {
+    border-bottom: none;
+}
+
+.schedule-card__days li span {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: #2b2b2b;
+    font-size: 18px;
+}
+
+.schedule-note {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #666;
+    font-style: italic;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* =========================================
+   8. ПОДВАЛ (FOOTER)
+   ========================================= */
 .footer {
     background-color: #1a1a1a;
     color: #888;
@@ -236,27 +329,19 @@ main {
     font-size: 13px;
 }
 
-/* .footer a {
-    color: #bbb;
-    text-decoration: none;
-    margin-left: 10px;
-}
-
-.footer a:hover {
-    color: #fff;
-} */
-
 .social-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-		gap: 6px; /* Расстояние между иконкой и словом MAX */
+    gap: 6px;
     margin-left: 10px;
-    color: #bbb; /* Цвет как у текста футера */
+    color: #bbb;
+    text-decoration: none;
+    font-size: 14px;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social-link:hover {
-    color: #fff; /* Белый при наведении */
-    transform: scale(1.1); /* Легкое увеличение */
+    color: #fff;
+    transform: scale(1.05);
 }
