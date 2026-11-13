@@ -424,6 +424,114 @@ main {
 }
 
 /* =========================================
+   10. КАРТОЧКИ-ПЕРЕВЕРТЫШИ (FLIP CARDS)
+   ========================================= */
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 400px; /* Фиксированная высота, чтобы карточки были ровными */
+    perspective: 1000px; /* Создает 3D-эффект глубины */
+    cursor: pointer;
+}
+
+.flip-card__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s; /* Плавность переворота */
+    transform-style: preserve-3d; /* Сохраняет 3D-пространство для дочерних элементов */
+}
+
+/* Эффект при наведении на десктопе */
+.flip-card:hover .flip-card__inner {
+    transform: rotateY(180deg);
+}
+
+/* Эффект при клике на мобильных (добавляется через JS) */
+.flip-card.is-flipped .flip-card__inner {
+    transform: rotateY(180deg);
+}
+
+/* Общие стили для обеих сторон */
+.flip-card__front, 
+.flip-card__back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Скрывает обратную сторону в Safari */
+    backface-visibility: hidden; /* Скрывает обратную сторону */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Лицевая сторона (светлая) */
+.flip-card__front {
+    background-color: #fff;
+    border-top: 4px solid #8b0000;
+    border-radius: 4px;
+}
+
+/* Обратная сторона (темная) */
+.flip-card__back {
+    background-color: #1a1a1a; /* Цвет шапки */
+    color: #fff;
+    transform: rotateY(180deg); /* Изначально развернута от нас */
+    border-top: 4px solid #b8860b; /* Золотая полоса сверху */
+}
+
+.flip-card__desc {
+    font-family: 'PT Serif', 'Georgia', serif;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+    color: #ddd;
+    margin-top: 15px;
+}
+
+/* Значок поворота на лицевой стороне */
+.flip-icon {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    font-size: 24px;
+    color: #8b0000;
+    font-weight: bold;
+    opacity: 0.7;
+    transition: transform 0.3s;
+}
+
+.flip-card:hover .flip-icon {
+    transform: rotate(180deg);
+    opacity: 1;
+}
+
+/* =========================================
+   11. СЕТКА ДЛЯ ЧЕМПИОНОВ
+   ========================================= */
+.champions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+/* Немного корректируем высоту карточки для длинного текста */
+.champions-grid .flip-card {
+    height: 420px; 
+}
+
+/* Уменьшаем размер шрифта описания на обратной стороне, чтобы влезло больше текста */
+.flip-card__desc {
+    font-size: 15px; 
+    line-height: 1.5;
+}
+
+/* =========================================
    8. ПОДВАЛ (FOOTER)
    ========================================= */
 .footer {
